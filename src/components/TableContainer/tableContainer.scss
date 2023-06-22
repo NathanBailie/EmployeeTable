@@ -1,0 +1,14 @@
+.tableContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  &__leftSideBar {
+    width: 300px;
+  }
+
+  &__main {
+    flex-grow: 1;
+  }
+}
