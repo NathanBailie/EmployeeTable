@@ -20,13 +20,15 @@ export default {
 <template>
   <div class="tableContainer">
     <div class="tableContainer__leftSideBar">
-      <AsideMenu />
+      <AsideMenu :componentToView="this.componentToView" />
     </div>
     <div class="tableContainer__main">
-      <template v-if="componentToView === 'employees'"><Employees /></template>
-      <template v-if="componentToView === 'statistics'"
-        ><Statistics
-      /></template>
+      <template v-if="componentToView === 'employees'">
+        <Employees />
+      </template>
+      <template v-if="componentToView === 'statistics'">
+        <Statistics />
+      </template>
     </div>
   </div>
 </template>

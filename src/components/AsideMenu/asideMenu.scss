@@ -2,6 +2,41 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 10px;
   align-items: center;
-  border: 1px solid blue;
+  padding: 10px;
+
+  span {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    a {
+      width: 100%;
+      text-decoration: none;
+      text-align: center;
+      color: black;
+      font-family: tahoma;
+      font-size: 22px;
+      line-height: 30px;
+      cursor: pointer;
+      user-select: none;
+      border-radius: 15px;
+      padding: 5px 10px;
+
+      &.active {
+        font-size: 25px;
+        font-style: italic;
+        background: #7169b7;
+        color: white;
+        font-weight: bold;
+      }
+
+      &:hover {
+        font-weight: bold;
+      }
+    }
+  }
 }
