@@ -1,4 +1,51 @@
 .employees {
   width: 100%;
-  border: 1px solid darkorange;
+
+  &__table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+
+    tr {
+      width: 100%;
+      border: 1px solid grey;
+
+      th {
+        font-size: 18px;
+        padding: 0 5px;
+      }
+
+      td {
+        font-size: 16px;
+        padding: 0 5px;
+      }
+
+      th,
+      td {
+        height: 35px;
+        text-align: center;
+        border: 1px solid grey;
+
+        &:first-child {
+          width: 25%;
+        }
+
+        &:nth-child(2) {
+          width: 15%;
+        }
+
+        &:nth-child(3) {
+          width: 10%;
+        }
+
+        &:nth-child(4) {
+          width: 25%;
+        }
+
+        &:nth-child(5) {
+          width: 25%;
+        }
+      }
+    }
+  }
 }
