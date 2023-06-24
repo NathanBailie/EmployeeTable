@@ -1,19 +1,16 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import { employees } from "./employees";
+import { returnState } from './state';
+import { mutations } from './mutations';
 
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state() {
-    return {
-      employees: employees
-
-    }
+    return returnState(employees)
   },
-  mutations: {
-
-  }
+  mutations: mutations,
 })
 
 export default store;

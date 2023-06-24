@@ -7,4 +7,14 @@ interface Employee {
   id: string,
 }
 
-export type { Employee };
+interface Manager {
+  id: string,
+  name: string
+}
+
+interface State {
+  data: Employee[];
+  employeeNames: Manager[]
+}
+
+export type { Employee, Manager, State };
