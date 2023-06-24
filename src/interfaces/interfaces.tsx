@@ -1,8 +1,8 @@
 interface Employee {
   name: string,
   gender: string,
-  age: number,
-  phone: number,
+  age: string,
+  phone: string,
   manager: string,
   id: string,
 }
@@ -13,8 +13,9 @@ interface Manager {
 }
 
 interface State {
-  data: Employee[];
-  employeeNames: Manager[]
+  data: Employee[],
+  employeeNames: Manager[],
+  formCondition: boolean
 }
 
 export type { Employee, Manager, State };

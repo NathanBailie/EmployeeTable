@@ -12,5 +12,15 @@ export const mutations = {
       };
       return person;
     });
+  },
+  addNewEmployee(state: State, payload: Employee) {
+    const newEmployee = payload;
+    state.data = [...state.data, newEmployee];
+  },
+  activateForm(state: State) {
+    state.formCondition = true
+  },
+  deactivateForm(state: State) {
+    state.formCondition = false
   }
 }

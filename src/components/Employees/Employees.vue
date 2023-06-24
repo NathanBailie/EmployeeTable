@@ -28,10 +28,7 @@ export default class Employees extends Vue {
         <td>{{ employee.phone }}</td>
         <td>
           <select @change="getSelectData(employee.id, $event)">
-            <option
-              v-for="manager in $store.state.employeeNames"
-              :key="manager.id"
-            >
+            <option v-for="manager in $store.state.managers" :key="manager.id">
               {{ manager.name }}
             </option>
           </select>

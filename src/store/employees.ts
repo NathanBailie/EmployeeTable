@@ -1,4 +1,4 @@
-import { createEmployee } from "../uitls/utils";
+import { createEmployee } from "../utils/utils";
 
 
 export const employees = [

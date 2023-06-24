@@ -1,15 +1,21 @@
 import { Employee, Manager } from "../interfaces/interfaces";
 
-export function returnState(employees: Employee[]): { data: Employee[], employeeNames: Manager[] } {
+export function returnState(employees: Employee[]): {
+  data: Employee[],
+  managers: Manager[],
+  formCondition: boolean
+} {
   const data: Employee[] = employees;
-  const employeeNames = employees.map((person) => ({
+  const managers = employees.map((person) => ({
     name: person.name,
     id: person.id
   }));
-  employeeNames.unshift({ name: '', id: 'empty' });
+  managers.unshift({ name: '', id: 'empty' });
+  const formCondition = false;
 
   return {
     data,
-    employeeNames
+    managers,
+    formCondition
   };
 }
