@@ -2,12 +2,16 @@
 import "./genderChart.scss";
 import { Pie } from "vue-chartjs";
 import PieChart from "./PieChart.vue";
+import store from "../../store/store";
 
 export default {
   name: "GenderChart",
   extends: Pie,
   components: {
     PieChart,
+  },
+  mounted() {
+    store.commit("getPercentRatioOfGenders");
   },
 };
 </script>

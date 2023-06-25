@@ -31,12 +31,8 @@ export const mutations = {
   toSortTheData(state: State, payload: string[]): void {
     const [sortingKeyWord, sortingMethod] = payload;
     state.data = state.data.sort((a: Employee, b: Employee): number => {
-      let first;
-      let second;
-
-      for (let manager of state.data) {
-        console.log(manager);
-      }
+      let first: string;
+      let second: string;
 
       if (sortingKeyWord === 'name') {
         first = a.name.toLowerCase();
@@ -58,8 +54,8 @@ export const mutations = {
         second = b.manager.toLowerCase();
       };
 
-      let firstResult = 1;
-      let secondResult = -1;
+      let firstResult: number = 1;
+      let secondResult: number = -1;
 
       if (sortingMethod === 'reverse') {
         firstResult = -1;
