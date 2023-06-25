@@ -14,7 +14,7 @@ export default {
 
 <template>
   <div class="ageChart">
-    <h2>График статистики количества сотрудников по возрасту</h2>
+    <h2>Количество сотрудников по возрасту</h2>
     <bar-chart></bar-chart>
   </div>
 </template>

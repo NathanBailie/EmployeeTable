@@ -1,17 +1,15 @@
+@import "../../styles/mixins.scss";
+
 .asideMenu {
   padding-top: 150px;
   width: 100%;
-  display: flex;
+  @include alignment;
   flex-direction: column;
   gap: 10px;
-  align-items: center;
 
   span {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+    @include alignment;
 
     a {
       width: 100%;

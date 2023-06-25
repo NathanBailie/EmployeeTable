@@ -1,5 +1,6 @@
 import { Employee, Manager, State } from "../interfaces/interfaces";
 
+
 export const mutations = {
   setManager(state: State, payload: Manager) {
     const { id, name } = payload;
@@ -13,16 +14,20 @@ export const mutations = {
       return person;
     });
   },
+
   addNewEmployee(state: State, payload: Employee): void {
     const newEmployee = payload;
     state.data = [...state.data, newEmployee];
   },
+
   activateForm(state: State): void {
     state.formCondition = true
   },
+
   deactivateForm(state: State): void {
     state.formCondition = false
   },
+
   toSortTheData(state: State, payload: string[]): void {
     const [sortingKeyWord, sortingMethod] = payload;
     state.data = state.data.sort((a: Employee, b: Employee): number => {

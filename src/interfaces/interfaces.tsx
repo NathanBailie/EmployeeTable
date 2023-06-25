@@ -14,7 +14,7 @@ interface Manager {
 
 interface State {
   data: Employee[],
-  employeeNames: Manager[],
+  managers: Manager[],
   formCondition: boolean,
   statisticByAgeGroups: number[],
   percentRatioOfGenders: number[]

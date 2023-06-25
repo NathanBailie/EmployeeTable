@@ -1,9 +1,9 @@
+@import "../../styles/mixins.scss";
+
 .addForm {
   width: 100%;
   height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include alignment;
 
   &__callFormButton,
   &__addButton {
@@ -14,9 +14,7 @@
     cursor: pointer;
     user-select: none;
     transition: all 0.1s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include alignment;
 
     &:hover,
     &:active {
@@ -75,10 +73,8 @@
   &__form {
     width: 400px;
     padding: 35px;
-    display: flex;
+    @include alignment;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     position: absolute;
     left: 50%;
     transform: translateX(-20%) translateY(-100%);
