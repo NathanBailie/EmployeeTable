@@ -1,0 +1,15 @@
+:root {
+
+  // table th cells
+  --table-head-font-size: 18px;
+
+  // table td cells
+  --table-cells-font-size: 16px;
+
+  // aside link styles
+  --aside-link-font-size: 22px;
+  --aside-link-line-height: 30px;
+  --aside-link-font-family: Tahoma;
+  --aside-link-font: var(--aside-link-font-size) / var(--aside-link-line-height) var(--aside-link-font-family);
+
+}
