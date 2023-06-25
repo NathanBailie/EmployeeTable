@@ -37,6 +37,13 @@ export default class AddForm extends Vue {
       this.$store.commit("deactivateForm");
     }
   }
+  closeForm() {
+    this.nameError = false;
+    this.genderError = false;
+    this.ageError = false;
+
+    this.$store.commit("deactivateForm");
+  }
 }
 </script>
 
@@ -66,7 +73,7 @@ export default class AddForm extends Vue {
         src="../../resources/icons/back.png"
         alt="back"
         title="close the form"
-        @click="$store.commit('deactivateForm')"
+        @click="closeForm"
       />
 
       <h2>Add a new employee</h2>
