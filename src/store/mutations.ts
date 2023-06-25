@@ -120,6 +120,6 @@ export const mutations = {
     const percentOfWomen = (ageGroups['female'] * 100) / amountOfEmployees;
     const percentOfMen = (ageGroups['male'] * 100) / amountOfEmployees;
 
-    state.percentRatioOfGenders = [percentOfWomen, percentOfMen];
+    state.percentRatioOfGenders = [Math.round(percentOfWomen), Math.round(percentOfMen)];
   }
 }
