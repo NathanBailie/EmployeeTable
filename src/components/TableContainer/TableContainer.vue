@@ -16,14 +16,14 @@ import AddForm from "../AddForm/AddForm.vue";
 })
 export default class TableContainer extends Vue {
   @Prop({ type: String })
-  componentToView!: string;
+  componentToView!: string | undefined;
 }
 </script>
 
 <template>
   <div class="tableContainer">
     <div class="tableContainer__leftSideBar">
-      <AsideMenu :componentToView="this.componentToView" />
+      <AsideMenu v-if="componentToView" :componentToView="componentToView" />
     </div>
     <div class="tableContainer__main">
       <template v-if="componentToView === 'employees'">

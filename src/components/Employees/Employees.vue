@@ -1,6 +1,7 @@
 <script lang="ts">
 import "./employees.scss";
 import { Component, Vue } from "vue-property-decorator";
+import store from "../../store/store";
 
 @Component
 export default class Employees extends Vue {
@@ -53,6 +54,11 @@ export default class Employees extends Vue {
       this.$store.commit("toSortTheData", ["manager", "reverse"]);
       this.managerSorting = "AZ";
     }
+  }
+
+  mounted() {
+    store.commit("getAmountOfAgeGroups");
+    store.commit("getPercentRatioOfGenders");
   }
 }
 </script>
