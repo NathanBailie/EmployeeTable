@@ -3,19 +3,25 @@ import { Employee, Manager } from "../interfaces/interfaces";
 export function returnState(employees: Employee[]): {
   data: Employee[],
   managers: Manager[],
-  formCondition: boolean
+  formCondition: boolean,
+  statisticByAgeGroups: number[],
+  percentRatioOfGenders: number[]
 } {
-  const data: Employee[] = employees;
-  const managers = employees.map((person) => ({
+  let data: Employee[] = employees;
+  let managers = employees.map((person) => ({
     name: person.name,
     id: person.id
   }));
   managers.unshift({ name: '', id: 'empty' });
-  const formCondition = false;
+  let formCondition: boolean = false;
+  let statisticByAgeGroups: number[] = [];
+  let percentRatioOfGenders: number[] = [];
 
   return {
     data,
     managers,
-    formCondition
+    formCondition,
+    statisticByAgeGroups,
+    percentRatioOfGenders
   };
 }

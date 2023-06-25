@@ -15,7 +15,9 @@ interface Manager {
 interface State {
   data: Employee[],
   employeeNames: Manager[],
-  formCondition: boolean
+  formCondition: boolean,
+  statisticByAgeGroups: number[],
+  percentRatioOfGenders: number[]
 }
 
 export type { Employee, Manager, State };

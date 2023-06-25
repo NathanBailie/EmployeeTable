@@ -13,17 +13,17 @@ export const mutations = {
       return person;
     });
   },
-  addNewEmployee(state: State, payload: Employee) {
+  addNewEmployee(state: State, payload: Employee): void {
     const newEmployee = payload;
     state.data = [...state.data, newEmployee];
   },
-  activateForm(state: State) {
+  activateForm(state: State): void {
     state.formCondition = true
   },
-  deactivateForm(state: State) {
+  deactivateForm(state: State): void {
     state.formCondition = false
   },
-  toSortTheData(state: State, payload: string[]) {
+  toSortTheData(state: State, payload: string[]): void {
     const [sortingKeyWord, sortingMethod] = payload;
     state.data = state.data.sort((a: Employee, b: Employee): number => {
       let first;
@@ -69,5 +69,56 @@ export const mutations = {
         return 0;
       }
     });
+  },
+
+  getAmountOfAgeGroups(state: State): void {
+    let ageGroups: Record<string, number> = {
+      "18-21": 0,
+      "22-25": 0,
+      "26-29": 0,
+      "30-33": 0,
+      "34-37": 0,
+      "38-41": 0,
+      "42-45": 0,
+      "46-49": 0,
+      "50-53": 0,
+      "54-56": 0,
+      "57-60": 0,
+    };
+
+    for (let employee of state.data) {
+      const age = Number(employee.age);
+      for (let range in ageGroups) {
+        const [from, to] = range.split('-').map((elem: string) => Number(elem));
+        if (age >= from && age <= to) {
+          ageGroups[range] += 1;
+        };
+      };
+    };
+    state.statisticByAgeGroups = Object.values(ageGroups);
+  },
+
+  getPercentRatioOfGenders(state: State): void {
+    let amountOfEmployees: number = 0;
+    let ageGroups: Record<string, number> = {
+      "female": 0,
+      "male": 0,
+    };
+
+    for (let employee of state.data) {
+      amountOfEmployees += 1;
+
+      if (employee.gender === 'female') {
+        ageGroups['female'] += 1;
+      };
+      if (employee.gender === 'male') {
+        ageGroups['male'] += 1;
+      };
+    };
+
+    const percentOfWomen = (ageGroups['female'] * 100) / amountOfEmployees;
+    const percentOfMen = (ageGroups['male'] * 100) / amountOfEmployees;
+
+    state.percentRatioOfGenders = [percentOfWomen, percentOfMen];
   }
 }
