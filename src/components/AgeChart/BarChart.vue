@@ -84,7 +84,14 @@ export default {
       },
     };
   },
+  methods: {
+    updateData() {
+      this.chartData.datasets[0].data = store.state.statisticByAgeGroups;
+    },
+  },
   mounted() {
+    store.commit("getAmountOfAgeGroups");
+    this.updateData();
     this.renderChart(this.chartData, this.options);
   },
 };

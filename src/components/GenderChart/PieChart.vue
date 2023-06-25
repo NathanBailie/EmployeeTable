@@ -17,7 +17,7 @@ export default {
               "rgba(255, 206, 86, 0.2)",
               "rgba(75, 192, 192, 0.2)",
             ],
-            data: store.state.percentRatioOfGenders,
+            data: [],
           },
         ],
       },
@@ -30,7 +30,14 @@ export default {
       },
     };
   },
+  methods: {
+    updateData() {
+      this.chartData.datasets[0].data = store.state.percentRatioOfGenders;
+    },
+  },
   mounted() {
+    store.commit("getPercentRatioOfGenders");
+    this.updateData();
     this.renderChart(this.chartData, this.options);
   },
 };
