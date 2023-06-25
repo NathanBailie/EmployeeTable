@@ -28,8 +28,8 @@ export default class AddForm extends Vue {
       const newEmployee = createEmployee(
         this.name,
         this.gender,
-        String(this.age),
-        String(this.phone),
+        this.age,
+        this.phone,
         this.manager
       );
 
@@ -37,7 +37,7 @@ export default class AddForm extends Vue {
       this.$store.commit("deactivateForm");
     }
   }
-  closeForm() {
+  closeForm(): void {
     this.nameError = false;
     this.genderError = false;
     this.ageError = false;

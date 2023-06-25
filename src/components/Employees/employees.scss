@@ -13,6 +13,21 @@
       th {
         font-size: 18px;
         padding: 0 5px;
+        user-select: none;
+
+        &:not(:nth-child(4)) {
+          cursor: pointer;
+
+          &:hover {
+            background: #ebe2ca;
+          }
+
+          &:active {
+            background: #d5caac;
+          }
+        }
+
+
       }
 
       td {
